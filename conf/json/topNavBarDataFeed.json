@@ -1,0 +1,12 @@
+{"topNav": {
+  "navbar-brand": "Awesome Project",
+  "menus": [
+        Home,
+        About,
+        Contact
+  ],
+  "menusRight": [
+    Default,
+    Static Top
+  ]
+}}

@@ -24,6 +24,15 @@ class Application extends Controller {
     Ok(views.html.index(mainFile))
   }
 
+  def getTopNavBarData =  Action {
+    val projectRoot = Play.current.path
+    val addingPath = Seq(projectRoot, "/conf/json/topNavBarDataFeed.json")
+    val finalPath = addingPath.mkString
+    val file = Source.fromFile(finalPath)
+    val mainFile = file.mkString
+    Ok(mainFile.toString())
+  }
+
   def topNavigationBar =  Action {
     Ok(views.html.topNavigationBar())
   }
