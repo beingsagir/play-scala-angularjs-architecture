@@ -24,4 +24,8 @@ class Application extends Controller {
     Ok(views.html.index(mainFile))
   }
 
+  def topNavigationBar =  Action {
+    Ok(views.html.topNavigationBar())
+  }
+
 }

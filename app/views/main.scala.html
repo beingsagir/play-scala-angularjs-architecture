@@ -2,14 +2,36 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" ng-app="PSAA">
     <head>
         <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+
+        @* External Resources *@
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("lib/angularJS/angular.min.js")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("lib/bootstrap/bootstrap-3.3.5/js/bootstrap.min.js")">
+
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("lib/bootstrap/bootstrap-3.3.5/css/bootstrap.min.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("lib/bootstrap/bootstrap-3.3.5/css/bootstrap.css")">
+
+        @* Custom resources *@
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("javascripts/utilities/constants.js")">
+
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("javascripts/controllers/mainController.js")">
+
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+
+
+
     </head>
     <body>
+        <div ng-include="'topNavigationBar.scala.html'"></div>
+        <div ng-include="@routes.Application.topNavigationBar"></div>
+        <div ng-include="'leftNavigationBar.scala.html'"></div>
+
+        <a href="@routes.Application.topNavigationBar" class="btn btn-primary">hehe</a>
+
         @content
+        <ng-view></ng-view>
     </body>
 </html>
