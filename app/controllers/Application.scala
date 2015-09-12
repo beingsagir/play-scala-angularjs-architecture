@@ -21,7 +21,7 @@ class Application extends Controller {
     val file = Source.fromFile(finalPath)
     val mainFile = file.mkString
 
-    Ok(views.html.index(mainFile))
+    Ok(views.html.index())
   }
 
   def getTopNavBarData =  Action {
