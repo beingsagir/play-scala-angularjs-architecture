@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html ng-app='newNw'>
+<html ng-app='myApp'>
     <head>
-        <title></title>
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="@routes.Assets.versioned("css/app.css")">
+        <title>play scala angular architecture</title>
+        <link rel="stylesheet" href="@routes.Assets.versioned("lib/bootstrap/bootstrap-3.3.5/css/bootstrap.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("css/app.css")">
+        <script data-main="@routes.Assets.versioned("js/main.js")" src="@routes.Assets.versioned("lib/requirejs/require.js")"></script>
 
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("lib/bootstrap/bootstrap-3.3.5/css/bootstrap.min.css")">
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/main.css")">
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.js"></script>
-
-        <script type="text/javascript"  src="@routes.Assets.versioned("lib/bootstrap/bootstrap-3.3.5/js/bootstrap.min.js")"></script>
-        <script type="text/javascript"  src="@routes.Assets.versioned("lib/angularJS/angular.min.js")"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/utilities/constants.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/app.js")"></script>
-        <script type="text/javascript" src="@routes.Assets.versioned("javascripts/controllers/mainController.js")"></script>
 
     </head>
     <body>
 
-            <!-- Fixed navbar -->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -34,16 +27,31 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#/index">Home</a></li>
-                        <li><a href="#/about">About</a></li>
-                        <li><a href="#/contact">Contact</a></li>
+                        <li><a href="#/view1">view1</a></li>
+                        <li><a href="#/view2">view2</a></li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div><!--/.navbar-collapse -->
             </div>
         </nav>
+        <div class="container">
+                <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Heading</h2>
+                    <ng-view></ng-view>
+                    <div>Angular seed app: v<span app-version></span></div>
+                </div>
+            </div>
 
-        <ng-view></ng-view>
+            <hr>
+
+            <footer>
+                <p>© Company 2014</p>
+            </footer>
+        </div>
     </body>
 </html>
+
+
 
 
